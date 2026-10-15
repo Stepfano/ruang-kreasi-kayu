@@ -1,0 +1,16 @@
+{
+  "name": "ruang-kreasi-store",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": ["frontend", "backend"],
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB -c blue,green \"node backend/src/server.js\" \"frontend/node_modules/.bin/vite --host 0.0.0.0\"",
+    "dev:api": "node backend/src/server.js",
+    "dev:web": "frontend/node_modules/.bin/vite --host 0.0.0.0",
+    "start": "node backend/src/server.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

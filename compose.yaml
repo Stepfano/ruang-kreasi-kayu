@@ -1,0 +1,12 @@
+services:
+  mongodb:
+    image: mongo:7
+    container_name: ruang-kreasi-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - ruang-kreasi-data:/data/db
+
+volumes:
+  ruang-kreasi-data:
